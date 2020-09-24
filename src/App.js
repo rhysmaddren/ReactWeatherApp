@@ -21,10 +21,12 @@ function App() {
         <button onClick={() => handleLocationClick(location.id)}>{location.name}</button>
       ))}
       {cityWeather ? ( //selecting the data to take from the parsed JSON
-        <WeatherCard condition={cityWeather.weather[0].main} temp={`${Math.floor(cityWeather.main.temp)} C`} icon={`http://openweathermap.org/img/wn/${cityWeather.weather[0].icon}@2x.png`} />
+        <WeatherCard condition={cityWeather.weather[0].main} temp={`${Math.round(cityWeather.main.temp)} °C`} icon={`http://openweathermap.org/img/wn/${cityWeather.weather[0].icon}@2x.png`} />
       ) : null}
     </div>
   );
 }
 
 export default App;
+
+//load state

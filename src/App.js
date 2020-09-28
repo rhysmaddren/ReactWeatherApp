@@ -2,16 +2,32 @@ import React, { useState } from 'react';
 import WeatherCard from './components/WeatherCard';
 import styled from 'styled-components'
 
+const StyledNavDiv = styled.div`
+    width:90%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F4FAFF;
+    `
+
 const StyledButton = styled.button`
-  background-color: #5BC0BE; /* Green */
-  border: none;
+  background-color: #7CC6FE; 
+  border:blue;
   color: white;
   padding: 15px 30px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  flex-grow: 1;
   font-size: 16px;
   margin: 20px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+
+  &:hover {
+    background-color: #5DFDCB;
+  }
 `
 const locations = [ //array that stores the locations and location id's, later used to create buttons
   { name: "San Francisco", id: "5391959" },
@@ -29,9 +45,11 @@ function App() {
   }
   return (
     <div>
-      {locations.map(location => (//maps over the array and creates a button for each location
-        <StyledButton onClick={() => handleLocationClick(location.id)}>{location.name}</StyledButton>
-      ))}
+      <StyledNavDiv>
+        {locations.map(location => (//maps over the array and creates a button for each location
+          <StyledButton onClick={() => handleLocationClick(location.id)}>{location.name}</StyledButton>
+        ))}
+      </StyledNavDiv>
       {cityWeather ? ( //selecting the data to take from the parsed JSON
         <WeatherCard condition={cityWeather.weather[0].main} temp={`${Math.round(cityWeather.main.temp)} °C`} icon={`http://openweathermap.org/img/wn/${cityWeather.weather[0].icon}@2x.png`} />
       ) : null}

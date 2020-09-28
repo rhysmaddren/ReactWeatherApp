@@ -7,15 +7,17 @@ const StyledWeatherCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #3A506B;
+    background-color: #7CC6FE;
     border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 
     p {
         font-size: 20px; ;
-        padding: 20px;
+        padding: 10px;
         text-align: center;
         margin:20px;
-        background-color: #5BC0BE;
+        background-color: #5DFDCB;
         flex-grow: 1;
         border-radius: 20px;
 

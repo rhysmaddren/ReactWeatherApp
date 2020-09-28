@@ -20,6 +20,10 @@ const StyledWeatherCard = styled.div`
         border-radius: 20px;
 
     }
+
+    div {
+        margin:auto;
+    }
 `
 
 
